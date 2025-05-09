@@ -1,0 +1,163 @@
+.rightsection {
+    height: 100%;
+    width: 28%;
+    color: #fff;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-left: -10px;
+    padding: 10px;
+
+}
+
+.card {
+    height: 433px;
+    width: 430px;
+    border-radius: 20px;
+    background-color: #1D1D41;
+    margin-top: 92px;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 6px 0 rgba(99, 89, 233, 0.29), 0 6px 20px 0 rgba(152, 152, 152, 0.19);
+}
+
+.card3:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 6px 0 rgba(99, 89, 233, 0.29), 0 6px 20px 0 rgba(152, 152, 152, 0.19);
+}
+
+.card h2 {
+    margin: 25px 30px;
+}
+
+.card section {
+    margin: 20px 30px;
+}
+
+.cardtop img {
+    width: 45px;
+}
+
+.card2 {
+    height: 184px;
+    width: 85%;
+    margin: 20px 30px;
+    border-radius: 20px;
+    background: linear-gradient(176deg, #9C2CF3, #3A6FF9);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.cardtop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cardbottom {
+    margin-top: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btns {
+    margin: 20px 30px;
+    display: flex;
+}
+
+.btns button {
+    cursor: pointer;
+    margin: 4px;
+    width: 48%;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #6359E9;
+    color: #fff;
+}
+
+.btns button:nth-child(2) {
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.card3 {
+    height: 433px;
+    width: 430px;
+    border-radius: 20px;
+    background-color: #1D1D41;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+
+.card3 .top {
+    margin: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card3 .top input {
+    background: transparent;
+    border: 1px solid #8C89B4;
+    border-radius: 10px;
+    color: #8C89B4;
+    padding: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.card3 .top input:hover {
+    transform: scale(1.07);
+}
+
+.activity {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px;
+}
+
+.activity div>label {
+    margin: 24px;
+}
+
+.activitybutton {
+    width: 86%;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 30px;
+    transition: 0.5s;
+}
+
+button {
+    transition: 0.5s;
+
+}
+
+button:hover {
+    transform: scale(1.04);
+
+}
+
+.activitybutton:hover {
+    transform: scale(1.07);
+}
