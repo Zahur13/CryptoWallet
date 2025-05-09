@@ -4,6 +4,8 @@ import { useAuth } from "../src/Components/context/AuthContext.jsx";
 function ProtectedRoute({ children }) {
   const { user } = useAuth();
 
+  console.log(user);
+
   if (!user) {
     return <Navigate to="/login" />;
   }

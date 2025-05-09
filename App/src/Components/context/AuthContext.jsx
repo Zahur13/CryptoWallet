@@ -11,7 +11,8 @@ import { auth, googleProvider } from "../../firebase.jsx";
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const userData = JSON.parse(localStorage.getItem("currentUser"));
+  const [user, setUser] = useState(userData || {});
 
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -31,6 +32,7 @@ export function AuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
       setUser(currentUser);
     });
     return () => {
