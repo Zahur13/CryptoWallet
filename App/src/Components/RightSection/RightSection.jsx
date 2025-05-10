@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./rightsection.css";
 const RightSection = () => {
+  const [balance, setBalance] = useState(
+    localStorage.getItem("balance") || 7000000
+  );
+
   return (
     <>
       <div className="rightsection">
@@ -8,13 +12,13 @@ const RightSection = () => {
           <h2>My Card</h2>
           <section>
             <p>Card Balance</p>
-            <span>$15,595.015</span>
+            <span>${balance}</span>
           </section>
           <div className="card2">
             <div className="cardtop">
               <div className="carditem">
                 <p>Current Balance</p>
-                <span>$57,50,20</span>
+                <span>${balance}</span>
               </div>
               <img
                 src="https://img.icons8.com/?size=96&id=62765&format=png"

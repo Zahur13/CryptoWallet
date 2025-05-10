@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "../Model/Sender";
 import Status from "../Model2/Status";
 import { useAuth } from "../context/AuthContext";
+
 const menuitems = [
   [
     {
@@ -47,6 +48,8 @@ const LeftSection = () => {
   const { user, logOut } = useAuth();
   const [activeTab, setActiveTab] = useState("Dashboard");
   const [screenIndex, setScreenIndex] = useState(0);
+
+  const [transactionDetails, setTransactionDetails] = useState({});
 
   useEffect(() => {
     setScreenIndex(0);
@@ -102,7 +105,7 @@ const LeftSection = () => {
             />
           </div>
           <div className="usertitle">
-            <span>{user?.email}</span>
+            <span>{user?.email?.split("@")[0]}</span>
             <p>Web Developer</p>
           </div>
           <div className="downarrow1" onClick={logOut}>
@@ -114,10 +117,16 @@ const LeftSection = () => {
         </section>
       </div>
       {activeTab === "Transfer" && screenIndex === 0 && (
-        <Modal setScreenIndex={setScreenIndex} />
+        <Modal
+          setScreenIndex={setScreenIndex}
+          setTransactionDetails={setTransactionDetails}
+        />
       )}
       {activeTab === "Transfer" && screenIndex === 1 && (
-        <Status setActiveTab={setActiveTab} />
+        <Status
+          setActiveTab={setActiveTab}
+          transactionDetails={transactionDetails}
+        />
       )}
     </>
   );

@@ -2,10 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import "./midsection.css";
 import TransactionTable from "./TransactionTable";
 import { LivePrice } from "../context/LivePrice";
+import { useAuth } from "../context/AuthContext";
+
 // const heading = ["Name", "Date", "Amount", "Status"];
 
 const MidSection = () => {
+  const { user, fetchTransactions } = useAuth();
+
   const { setCurrency } = useContext(LivePrice);
+
   const currencyHandler = (event) => {
     switch (event.target.value) {
       case "usd": {
@@ -29,15 +34,28 @@ const MidSection = () => {
 
   const { allCoin, currency } = useContext(LivePrice);
   const [displayCoin, setDisplayCoin] = useState([]);
+  const [totalWithdrawal, setTotalWithdrawal] = useState(0);
 
   useEffect(() => {
     setDisplayCoin(allCoin);
   }, [allCoin]);
+  console.log(totalWithdrawal, "totalWithdrawal");
+  useEffect(() => {
+    fetchTransactions(user.email?.split("@")[0]).then((res) => {
+      let sum = res.transactions
+        ?.map((ele) => {
+          return ele.amount;
+        })
+        .reduce((a, c) => a + c, 0);
+      setTotalWithdrawal(sum);
+      localStorage.setItem("balance", 700000 - sum);
+    });
+  }, []);
   return (
     <>
       <div className="midsection">
         <div className="greet">
-          <span>WelCome Back, Ali</span>
+          <span>WelCome Back, {user?.email}</span>
           <p>Bitcoin is different than what you know</p>
         </div>
         <div className="total">
@@ -50,7 +68,7 @@ const MidSection = () => {
             </div>
             <div className="usertitle">
               <p>Total Deposit</p>
-              <span>$632.000</span>
+              <span>$700.000</span>
             </div>
             <div className="downarrow">
               <span>+1.29%</span>
@@ -65,7 +83,7 @@ const MidSection = () => {
             </div>
             <div className="usertitle">
               <p>Total Withdrawal</p>
-              <span className="redspan">$632.000</span>
+              <span className="redspan">${totalWithdrawal}</span>
             </div>
             <div className="reddownarrow">
               <span>+1.29%</span>

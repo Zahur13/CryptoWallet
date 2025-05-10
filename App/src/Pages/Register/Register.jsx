@@ -45,7 +45,7 @@ function Register() {
       <div className="auth-card">
         <h2>Register</h2>
         {error && <div className="auth-error">{error}</div>}
-        <form onSubmit={handleSubmit}>
+        <form className="loginform" onSubmit={handleSubmit}>
           <div className="auth-form-group">
             <label>Name</label>
             <input
