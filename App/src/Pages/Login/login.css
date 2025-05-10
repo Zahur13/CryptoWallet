@@ -9,8 +9,6 @@
 }
 
 
-/*  */
-
 .auth-card {
     padding: 2rem;
     border-radius: 8px;
@@ -28,14 +26,22 @@
     color: #fff;
 }
 
+.loginform {
+    display: flex;
+    flex-direction: column;
+}
+
 .auth-form-group {
     margin-bottom: 1rem;
+    display: flex;
 }
 
 .auth-form-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: #fff;
+    margin: 10px;
+    text-align: left;
 }
 
 .auth-form-group input {

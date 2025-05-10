@@ -1,9 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import "./midsection.css";
-import TransactionTable from "./TransactionTable";
+import React from 'react'
+import  { useContext, useEffect, useState } from "react";
 import { LivePrice } from "../context/LivePrice";
-// const heading = ["Name", "Date", "Amount", "Status"];
-
 const MidSection = () => {
   const { setCurrency } = useContext(LivePrice);
   const currencyHandler = (event) => {
@@ -33,46 +30,10 @@ const MidSection = () => {
   useEffect(() => {
     setDisplayCoin(allCoin);
   }, [allCoin]);
+const Analytics = ({ setActiveTab }) => {
   return (
-    <>
-      <div className="midsection">
-        <div className="greet">
-          <span>WelCome Back, Ali</span>
-          <p>Bitcoin is different than what you know</p>
-        </div>
-        <div className="total">
-          <section>
-            <div className="arrow">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/8591/8591512.png"
-                alt="user"
-              />
-            </div>
-            <div className="usertitle">
-              <p>Total Deposit</p>
-              <span>$632.000</span>
-            </div>
-            <div className="downarrow">
-              <span>+1.29%</span>
-            </div>
-          </section>
-          <section>
-            <div className="arrow2">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/8591/8591651.png"
-                alt="user"
-              />
-            </div>
-            <div className="usertitle">
-              <p>Total Withdrawal</p>
-              <span className="redspan">$632.000</span>
-            </div>
-            <div className="reddownarrow">
-              <span>+1.29%</span>
-            </div>
-          </section>
-        </div>
-        <div className="analytics">
+    
+      <div className="analytics">
           <div className="insideAnalytics">
             <div className="liveprice">
               <span>Live Price</span>
@@ -116,31 +77,8 @@ const MidSection = () => {
             </div>
           </div>
         </div>
-        <div className="transaction">
-          <div className="insidetransaction">
-            <section>
-              <span>Transactions</span>
-            </section>
-            <section className="inout">
-              <div className="search">
-                <input type="text" placeholder="Search for anything..." />
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/8669/8669664.png"
-                  alt="search"
-                />
-              </div>
-              <div className="input2">
-                <input type="date" />
-              </div>
-            </section>
-          </div>
-          <div className="transactionitems">
-            <TransactionTable />
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+    
+  )
+}
 
-export default MidSection;
+export default Analytics;

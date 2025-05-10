@@ -63,7 +63,7 @@ function Login() {
       <div className="auth-card">
         <h2>Login</h2>
         {error && <div className="auth-error">{error}</div>}
-        <form onSubmit={handleSubmit}>
+        <form className="loginform" onSubmit={handleSubmit}>
           <div className="auth-form-group">
             <label>Email</label>
             <input
@@ -71,6 +71,7 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              placeholder="Enter your email..."
             />
           </div>
           <div className="auth-form-group">
@@ -80,6 +81,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              placeholder="Enter your password..."
             />
           </div>
           <button disabled={loading} type="submit" className="auth-button">

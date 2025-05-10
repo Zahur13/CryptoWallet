@@ -1,11 +1,8 @@
 import "./leftsection.css";
-import React, { useState } from "react";
-// import Logo from "../../assets/logo.png";
-// import Dashboard from "../../assets/element-3.png";
-// import Anlytics from "../../assets/bar-line-chart.png";
-// import Wallet from "../../assets/wallet-02.png";
-// import Account from "../../assets/user-03.png";
-// import Setting from "../../assets/setting-01.png";
+import React, { useState, useEffect } from "react";
+import Modal from "../Model/Sender";
+import Status from "../Model2/Status";
+import { useAuth } from "../context/AuthContext";
 const menuitems = [
   [
     {
@@ -17,11 +14,15 @@ const menuitems = [
       img: "https://cdn-icons-png.flaticon.com/128/1548/1548914.png",
     },
     {
+      name: "Transfer",
+      img: "https://cdn-icons-png.flaticon.com/128/1790/1790169.png",
+    },
+    {
       name: "My Wallet",
       img: "https://cdn-icons-png.flaticon.com/128/3757/3757939.png",
     },
     {
-      name: "Accounts",
+      name: "Profile",
       img: "https://cdn-icons-png.flaticon.com/128/3033/3033143.png",
     },
     {
@@ -43,7 +44,14 @@ const menuitems = [
 ];
 
 const LeftSection = () => {
+  const { user, logOut } = useAuth();
   const [activeTab, setActiveTab] = useState("Dashboard");
+  const [screenIndex, setScreenIndex] = useState(0);
+
+  useEffect(() => {
+    setScreenIndex(0);
+  }, [activeTab]);
+
   return (
     <>
       <div className="leftbar">
@@ -94,17 +102,23 @@ const LeftSection = () => {
             />
           </div>
           <div className="usertitle">
-            <span>Ali Riaz</span>
+            <span>{user?.email}</span>
             <p>Web Developer</p>
           </div>
-          <div className="downarrow">
+          <div className="downarrow1" onClick={logOut}>
             <img
-              src="https://cdn-icons-png.flaticon.com/128/2722/2722987.png"
+              src="https://cdn-icons-png.flaticon.com/128/11873/11873991.png"
               alt="arrow"
             />
           </div>
         </section>
       </div>
+      {activeTab === "Transfer" && screenIndex === 0 && (
+        <Modal setScreenIndex={setScreenIndex} />
+      )}
+      {activeTab === "Transfer" && screenIndex === 1 && (
+        <Status setActiveTab={setActiveTab} />
+      )}
     </>
   );
 };
