@@ -1,16 +1,25 @@
 .profile {
-    height: 100%;
+    height: 92.5vh;
     width: 100%;
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
     padding: 10px 100px;
-    /* column-gap: 10px; */
-    margin-bottom: 25%;
+    column-gap: 10px;
+    /* margin-bottom: 25%; */
+    background-color: #141332;
 }
 
 .inputs {
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* border: 1px solid red; */
+    width: fit-content;
+    margin: auto;
+    padding: 50px;
+    border-radius: 20px;
+    color: #fff;
+    background: #1d1d41;
+    margin-top: 135px;
 }
 
 .inputs input {
@@ -21,19 +30,18 @@
     border-bottom: 1px solid gray;
     font-size: 18px;
     padding: 10px;
+    border-radius: 8px;
 }
 
-.span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid red; */
-    width: fit-content;
-    text-align: center;
-}
 
-.span span {
-    color: black;
-    font-weight: 600;
-    margin-left: 10px;
+
+button {
+    margin-top: 30px;
+    padding: 10px 95px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
 }

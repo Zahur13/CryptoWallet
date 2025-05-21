@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import styles from "./Wallet.module.css";
+import styles from "./Wallet.module.css";
 
 const Wallet = () => {
   const [balance, setBalance] = useState([]);
@@ -16,13 +16,16 @@ const Wallet = () => {
     localStorage.getItem("balance", balance);
     localStorage.getItem("cardnumber", cardnumber);
     localStorage.getItem("cvv", cvv);
-  }, []);
-  console.log(balance);
+  }, [balance, cardnumber, cvv]);
+
+  const clickHandler = () => {
+    alert("Wallet Updated Successfully");
+  };
 
   return (
-    <div>
-      <h2>Wallet</h2>
-      <div className="walletInside">
+    <div className={styles.wallet}>
+      <div className={styles.walletInside}>
+        <h2>Wallet</h2>
         <input
           type="text"
           placeholder="Add Balance"
@@ -42,7 +45,7 @@ const Wallet = () => {
           onChange={(e) => setCvv(e.target.value)}
         />
         <a href="/">
-          <button>Submit</button>
+          <button onClick={clickHandler}>Submit</button>
         </a>
       </div>
     </div>

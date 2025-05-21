@@ -69,7 +69,7 @@ const MidSection = () => {
             </div>
             <div className="usertitle">
               <p>Total Deposit</p>
-              <span>$700.000</span>
+              <span>$7000.000</span>
             </div>
             <div className="downarrow">
               <span>+1.29%</span>

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import "./rightsection.css";
+
 const RightSection = () => {
-  const [balance, setBalance] = useState(
-    localStorage.getItem("balance") || 7000000
-  );
+  const [balance] = useState(localStorage.getItem("balance") || 70000);
   // console.log(balance);
-  const [cardnumber, setCardNumber] = useState(
-    localStorage.getItem("cardnumber")
-  );
-  const [cvv, setCvv] = useState(localStorage.getItem("cvv"));
+  const [cardnumber] = useState(localStorage.getItem("cardnumber"));
+  const [cvv] = useState(localStorage.getItem("cvv"));
   const formatted = cardnumber.replace(/(\d{4})(?=\d)/g, "$1 ");
 
   return (
@@ -32,13 +29,13 @@ const RightSection = () => {
               />
             </div>
             <div className="cardbottom">
-              <h5>{formatted}</h5>
+              <h2>{formatted}</h2>
               <h4>{cvv}</h4>
             </div>
           </div>
           <div className="btns">
-            <button>Manage Cards</button>
-            <button>Transfer</button>
+            <button className="btns1">Manage Cards</button>
+            <button className="btns1">Transfer</button>
           </div>
         </div>
         <div className="card3">
