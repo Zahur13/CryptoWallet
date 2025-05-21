@@ -1,8 +1,8 @@
 .send-container {
     /* width: 96%; */
     border-radius: 20px;
-    /* background: #bdb8fb; */
-    background: linear-gradient(176deg, #cac7fb, #6e65ee);
+    background: #f6f5ff;
+    /* background: linear-gradient(176deg, #cac7fb, #6e65ee); */
     padding: 20px;
     margin: 30px 0;
     margin-left: 21%;
@@ -15,9 +15,9 @@
     z-index: 9;
 }
 
-.form-container {
+/* .form-container {
     margin-top: 10%;
-}
+} */
 
 form {
     display: flex;
@@ -52,7 +52,7 @@ form input {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin-top: 6%;
+
 }
 
 .send-container .send-btn button {

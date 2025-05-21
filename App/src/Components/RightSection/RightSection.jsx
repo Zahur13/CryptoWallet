@@ -4,6 +4,12 @@ const RightSection = () => {
   const [balance, setBalance] = useState(
     localStorage.getItem("balance") || 7000000
   );
+  // console.log(balance);
+  const [cardnumber, setCardNumber] = useState(
+    localStorage.getItem("cardnumber")
+  );
+  const [cvv, setCvv] = useState(localStorage.getItem("cvv"));
+  const formatted = cardnumber.replace(/(\d{4})(?=\d)/g, "$1 ");
 
   return (
     <>
@@ -26,8 +32,8 @@ const RightSection = () => {
               />
             </div>
             <div className="cardbottom">
-              <h5>5282 3456 7890 1289</h5>
-              <h4>09/25</h4>
+              <h5>{formatted}</h5>
+              <h4>{cvv}</h4>
             </div>
           </div>
           <div className="btns">

@@ -39,6 +39,7 @@ const MidSection = () => {
   useEffect(() => {
     setDisplayCoin(allCoin);
   }, [allCoin]);
+
   console.log(totalWithdrawal, "totalWithdrawal");
   useEffect(() => {
     fetchTransactions(user.email?.split("@")[0]).then((res) => {

@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <div className="maincontainer">
-        <LeftSection />
+        <LeftSection title="CryptoSphere" />
         <MidSection />
         <RightSection />
       </div>

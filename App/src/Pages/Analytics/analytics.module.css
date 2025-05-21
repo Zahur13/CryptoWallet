@@ -1,0 +1,77 @@
+.analytics {
+    height: 727px;
+    /* height: fit-content; */
+    margin-top: 30px;
+    width: 99%;
+    background: #1D1D41;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 8px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    overflow-y: scroll;
+}
+
+.coinlayout .green {
+    color: green;
+}
+
+.coinlayout .red {
+    color: red;
+}
+
+.liveprice select {
+    background: transparent;
+    border: none;
+    color: #d0cece;
+    font-size: 18px;
+
+}
+
+.liveprice {
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+}
+
+span {
+    color: #fff;
+    margin: 10px;
+}
+
+.analytics .insideAnalytics {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cointable {
+    /* max-width: 600px; */
+    margin: auto;
+    background: transparent;
+    border-radius: 15px;
+}
+
+.coinlayout {
+    display: grid;
+    grid-template-columns: 1fr 10.7fr 7fr 3fr 12.5fr;
+    padding: 15px 10px;
+    align-items: center;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+p {
+    color: #A6A6A6;
+    font-size: 16px;
+}
+
+.coinlayout div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coinlayout div img {
+    width: 30px;
+}

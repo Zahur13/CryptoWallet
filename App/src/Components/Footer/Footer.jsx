@@ -1,11 +1,11 @@
 import React from "react";
 import "./footer.css";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <>
       <div className="footer">
-        <p>Copyright @ 2025, CryptoWallet - All Right Reserved.</p>
+        <p> &copy; Copyright 2025, {props.title} - All Right Reserved.</p>
       </div>
     </>
   );

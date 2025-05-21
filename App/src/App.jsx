@@ -5,6 +5,9 @@ import Register from "./Pages/Register/Register.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import { AuthContextProvider } from "./Components/context/AuthContext.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
+import Analytics from "./Pages/Analytics/Analytics.jsx";
+import Profile from "./Pages/Profile/Profile.jsx";
+import Wallet from "./Pages/Wallet/Wallet.jsx";
 
 function App() {
   return (
@@ -22,10 +25,13 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/wallet" element={<Wallet />} />
           </Routes>
         </AuthContextProvider>
       </Router>
-      <Footer />
+      <Footer title="CryptoShpere" />
     </>
   );
 }

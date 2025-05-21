@@ -6,20 +6,20 @@ const TransactionTable = () => {
   const { user, fetchTransactions } = useAuth();
   const [state, setstate] = useState({});
 
-  const image = [
-    "https://cdn-icons-png.flaticon.com/128/3518/3518775.png",
-    "https://cdn-icons-png.flaticon.com/128/3393/3393852.png",
-    "https://cdn-icons-png.flaticon.com/128/3442/3442091.png",
-    "https://cdn-icons-png.flaticon.com/128/6997/6997662.png",
-    "https://cdn-icons-png.flaticon.com/128/4140/4140047.png",
-    "https://cdn-icons-png.flaticon.com/128/18798/18798808.png",
-    "https://cdn-icons-png.flaticon.com/128/6997/6997668.png",
-    "https://cdn-icons-png.flaticon.com/128/2118/2118520.png",
-    "https://cdn-icons-png.flaticon.com/128/1999/1999625.png",
-    "https://cdn-icons-png.flaticon.com/128/16683/16683451.png",
-    "https://cdn-icons-png.flaticon.com/128/4333/4333609.png",
-    "https://cdn-icons-png.flaticon.com/128/6924/6924580.png",
-    "https://cdn-icons-png.flaticon.com/128/14663/14663195.png",
+  const img = [
+    { img: "https://cdn-icons-png.flaticon.com/128/3393/3393852.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/3518/3518775.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/3442/3442091.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/6997/6997662.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/4140/4140047.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/18798/18798808.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/6997/6997668.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/2118/2118520.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/1999/1999625.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/16683/16683451.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/4333/4333609.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/6924/6924580.png" },
+    { img: "https://cdn-icons-png.flaticon.com/128/14663/14663195.png" },
   ];
 
   useEffect(() => {
@@ -141,7 +141,10 @@ const TransactionTable = () => {
               <td>
                 <div className="icons">
                   <div className="round">
-                    <img src={image} alt="icon" />
+                    {/* {img.map((img, index) => (
+                      <img key={index} src={img["$"]} alt="icon" />
+                    ))} */}
+                    <img src={img} alt="avatar" />
                   </div>
 
                   {transaction.receiverName}

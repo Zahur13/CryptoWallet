@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "../Model/Sender";
 import Status from "../Model2/Status";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const menuitems = [
   [
@@ -13,6 +14,7 @@ const menuitems = [
     {
       name: "Anlytics",
       img: "https://cdn-icons-png.flaticon.com/128/1548/1548914.png",
+      path: "/analytics", // Added path for analytics
     },
     {
       name: "Transfer",
@@ -21,10 +23,12 @@ const menuitems = [
     {
       name: "My Wallet",
       img: "https://cdn-icons-png.flaticon.com/128/3757/3757939.png",
+      path: "/wallet",
     },
     {
       name: "Profile",
       img: "https://cdn-icons-png.flaticon.com/128/3033/3033143.png",
+      path: "/profile",
     },
     {
       name: "Settings",
@@ -44,16 +48,24 @@ const menuitems = [
   // https://ibb.co/bgQXksb1 //hand emoji
 ];
 
-const LeftSection = () => {
+const LeftSection = (props) => {
   const { user, logOut } = useAuth();
   const [activeTab, setActiveTab] = useState("Dashboard");
   const [screenIndex, setScreenIndex] = useState(0);
+  const navigate = useNavigate(); // Initialize navigate function
 
   const [transactionDetails, setTransactionDetails] = useState({});
 
   useEffect(() => {
     setScreenIndex(0);
   }, [activeTab]);
+
+  const handleMenuItemClick = (item) => {
+    setActiveTab(item.name);
+    if (item.path) {
+      navigate(item.path); // Navigate to the path if it exists
+    }
+  };
 
   return (
     <>
@@ -63,16 +75,20 @@ const LeftSection = () => {
             src={"https://cdn-icons-png.flaticon.com/128/5001/5001564.png"}
             alt=""
           />
-          <h2>CryptoWallet</h2>
+          <h2>{props.title}</h2>
         </div>
         <section className="menu">
           {menuitems[0].map((item) => {
             return (
               <div
+                // key={index} // Added key prop
                 className={`menuItem ${item.name === activeTab && "active"}`}
-                onClick={() => {
-                  setActiveTab(item.name);
-                }}
+                // onClick={() => {
+                //   setActiveTab(item.name);
+                // }}
+                onClick={() =>
+                  handleMenuItemClick(item) && setActiveTab(item.name)
+                }
               >
                 <img src={item.img} alt="menuitem" />
                 <span>{item.name}</span>
@@ -85,6 +101,7 @@ const LeftSection = () => {
           {menuitems[1].map((item) => {
             return (
               <div
+                // key={index} // Added key prop
                 className={`menuItem ${item.name === activeTab && "active"}`}
                 onClick={() => {
                   setActiveTab(item.name);

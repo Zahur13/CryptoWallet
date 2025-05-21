@@ -14,4 +14,12 @@
     display: flex;
     align-items: center;
     overflow-y: hidden;
+
+}
+
+@media (min-width:1606) {
+    .maincontainer {
+        display: none;
+    }
+
 }
